@@ -11,8 +11,6 @@
         <module>api</module>
         <module>server</module>
         <module>common</module>
-        <module>im</module>
-        <module>weixin</module>
     </modules>
     <packaging>pom</packaging>
 
