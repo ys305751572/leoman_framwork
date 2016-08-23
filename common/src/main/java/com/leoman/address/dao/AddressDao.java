@@ -21,6 +21,4 @@ public interface AddressDao extends IBaseJpaRepository<Address> {
 
     @Query("select a from Address a where a.userInfo.id = ?1 and a.isDefault = 1")
     public Address findDefaultByUserId(Long userId);
-
-    public Address findDefaultByUserId2(Long userId);
 }
