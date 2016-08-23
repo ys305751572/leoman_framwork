@@ -1,5 +1,6 @@
 package com.leoman.index.controller;
 
+import com.leoman.admin.entity.Admin;
 import com.leoman.admin.entity.AdminRole;
 import com.leoman.admin.service.AdminRoleService;
 import com.leoman.barrage.entity.Barrage;
@@ -130,14 +131,10 @@ public class IndexController extends CommonController {
                              String remark,
                              ModelMap model) {
         response.setCharacterEncoding("UTF-8");
-        HttpSession session = request.getSession();
-
         // 管理员
-        AdminRole adminRole = adminRoleService.sysUserLogin(session, username, Md5Util.md5(password));
-
-        //Boolean success = loginService.login(request, username, Md5Util.md5(password), Constant.MEMBER_TYPE_GLOBLE,remark);
-
-        if (adminRole != null) {
+//        AdminRole adminRole = adminRoleService.sysUserLogin(request, username, Md5Util.md5(password));
+        Boolean success = loginService.login(request, username, Md5Util.md5(password), Constant.MEMBER_TYPE_GLOBLE,remark);
+        if (success) {
             // 登录成功后，将用户名放入cookies
             int loginMaxAge = 30 * 24 * 60 * 60; // 定义cookies的生命周期，这里是一个月。单位为秒
             CookiesUtils.addCookie(response, "username", username, loginMaxAge);
@@ -174,8 +171,8 @@ public class IndexController extends CommonController {
                             ModelMap model) {
 
         // 获取当前登录人信息
-        Long loginUserId = (Long) request.getSession().getAttribute(Constant.CURRENT_USER_ID);
-        AdminRole adminRole = adminRoleService.queryByPK(loginUserId);
+        Admin admin = (Admin) request.getSession().getAttribute(Constant.MEMBER_TYPE_GLOBLE);
+        AdminRole adminRole = adminRoleService.queryByPK(admin.getId());
 
         // 根据当前登录人的角色id获取对应的权限列表
         List<Modules> modulesList = modulesService.findFirstList(adminRole.getRole().getId());

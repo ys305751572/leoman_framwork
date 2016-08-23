@@ -1,4 +1,4 @@
-USE `yqyl`;
+USE `leoman_framework_demo`;
 
 /*Table structure for table `t_admin` */
 
@@ -25,7 +25,11 @@ DROP TABLE IF EXISTS `t_log`;
 CREATE TABLE `t_log` (
   `id` bigint(32) NOT NULL AUTO_INCREMENT,
   `message` varchar(100) DEFAULT '' COMMENT '日志消息',
+  `user_type` int(2) DEFAULT 0 COMMENT '用户类别 0:后台管理员 1:APP用户',
   `user_id` bigint(20) DEFAULT NULL COMMENT '操作用户ID',
+  `url` VARCHAR(500) DEFAULT '' COMMENT '访问路径',
+  `params` VARCHAR(500) DEFAULT '' COMMENT '访问参数',
+  `log_type` int(2) DEFAULT 0 COMMENT '日志类型 0:信息 1:错误',
   `create_date` bigint(20) DEFAULT NULL,
   `modify_date` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)

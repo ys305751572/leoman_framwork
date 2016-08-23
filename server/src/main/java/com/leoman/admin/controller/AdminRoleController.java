@@ -57,6 +57,7 @@ public class AdminRoleController extends GenericEntityController<AdminRole, Admi
             start = 1;
         }
         int pageNum = getPageNum(start, length);
+        adminRoleService = null;
         Page<AdminRole> page = adminRoleService.page(account, roleId, mobile, pageNum, length);
 
         Map<String, Object> result = DataTableFactory.fitting(draw, page);

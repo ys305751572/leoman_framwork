@@ -87,7 +87,7 @@ public class AdminRoleServiceImpl extends GenericManagerImpl<AdminRole, AdminRol
     }
 
     @Override
-    public AdminRole sysUserLogin(HttpSession session, String username, String password) {
+    public AdminRole sysUserLogin(HttpServletRequest request, String username, String password) {
 
         AdminRole adminRole = adminRoleDao.sysUserLogin(username, password);
         if (null != adminRole) {
@@ -96,7 +96,7 @@ public class AdminRoleServiceImpl extends GenericManagerImpl<AdminRole, AdminRol
             adminDao.save(adminRole.getAdmin());
             adminRoleDao.save(adminRole);
 
-            putSession(session, adminRole.getId(), adminRole.getAdmin().getUsername());
+            putSession(request.getSession(), adminRole.getAdmin());
             return adminRole;
         }
 
@@ -141,8 +141,9 @@ public class AdminRoleServiceImpl extends GenericManagerImpl<AdminRole, AdminRol
     }
 
     // 将登录人的信息放入session中
-    private void putSession(HttpSession session, Long id, String name) {
-        session.setAttribute(Constant.CURRENT_USER_ID, id);
-        session.setAttribute(Constant.CURRENT_USER_NAME, name);
+    private void putSession(HttpSession session,Admin admin) {
+//        session.setAttribute(Constant.CURRENT_USER_ID, id);
+//        session.setAttribute(Constant.CURRENT_USER_NAME, name);
+        session.setAttribute(Constant.SESSION_MEMBER_GLOBLE, admin);
     }
 }

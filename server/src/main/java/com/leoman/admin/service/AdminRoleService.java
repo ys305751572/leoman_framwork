@@ -19,7 +19,7 @@ public interface AdminRoleService extends GenericManager<AdminRole>{
     public List<AdminRole> findByRoleId(Long roleId);
 
     // 总后台管理员登录
-    public AdminRole sysUserLogin(HttpSession session, String username, String password);
+    public AdminRole sysUserLogin(HttpServletRequest request, String username, String password);
 
     public Integer save(HttpServletRequest request,
                      Long id,

@@ -500,15 +500,6 @@ public class DateUtils {
 
 
 	public static String getNewStartTime(){
-		/*Date date = new Date();
-		String newStartTime = "";
-		Calendar calendar = Calendar.getInstance();
-		calendar.setTime(date);
-		calendar.add(Calendar.DAY_OF_MONTH, -timeDiffer);
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		date = calendar.getTime();
-		newStartTime = format.format(date);
-		return newStartTime;*/
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Calendar c = Calendar.getInstance();
 		c.add(Calendar.MONTH, 0);

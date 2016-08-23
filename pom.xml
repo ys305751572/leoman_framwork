@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.leoman</groupId>
-    <artifactId>yqyl</artifactId>
+    <artifactId>leoman_framework</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>api</module>
@@ -334,7 +334,7 @@
         <profile>
             <id>dev-localhost</id>
             <properties>
-                <pro.jdbc.url>jdbc:mysql://4.16.1.158:3306/yqyl?characterEncoding=UTF-8</pro.jdbc.url>
+                <pro.jdbc.url>jdbc:mysql://4.16.1.158:3306/leoman_framework_demo?characterEncoding=UTF-8</pro.jdbc.url>
                 <pro.jdbc.username>root</pro.jdbc.username>
                 <pro.jdbc.password>root</pro.jdbc.password>
                 <pro.upload.url>http://4.16.3.184:8081/files/upload/</pro.upload.url>
@@ -343,35 +343,11 @@
                 <base.domain>http://localhost:8080</base.domain>
             </properties>
         </profile>
-        <profile>
-            <id>deploy-test</id>
-            <properties>
-                <pro.jdbc.url>jdbc:mysql://4.16.1.158:3306/yqyl?characterEncoding=UTF-8</pro.jdbc.url>
-                <pro.jdbc.username>root</pro.jdbc.username>
-                <pro.jdbc.password>root</pro.jdbc.password>
-                <pro.upload.url>http://4.16.1.158:8081/files/upload/</pro.upload.url>
-                <pro.upload.path>E:/server/tomcat-yqtq_app/apache-tomcat-7.0.64/webapps/files/upload/</pro.upload.path>
-                <base.url>http://4.16.1.158:8080/yqyl/</base.url>
-                <base.domain>http://4.16.1.158:8080</base.domain>
-            </properties>
-        </profile>
-        <profile>
-            <id>deploy-formal</id>
-            <properties>
-                <pro.jdbc.url>jdbc:mysql://10.10.213.130:3306/kdxg?characterEncoding=UTF-8</pro.jdbc.url>
-                <pro.jdbc.username>expressBrother</pro.jdbc.username>
-                <pro.jdbc.password>express.123</pro.jdbc.password>
-                <pro.upload.url>http://123.59.40.32/files/upload/</pro.upload.url>
-                <pro.upload.path>/usr/local/tomcat7/webapps/files/upload/</pro.upload.path>
-                <base.url>http://qq.tt/yqyl/</base.url>
-                <base.domain>http://qq.tt</base.domain>
-            </properties>
-        </profile>
     </profiles>
 
 
     <build>
-        <finalName>yqyl-all</finalName>
+        <finalName>leoman_framework</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -395,7 +371,7 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>2.3</version>
                     <configuration>
-                        <warName>yqyl</warName>
+                        <warName>leoman_framework</warName>
                     </configuration>
                 </plugin>
             </plugins>
