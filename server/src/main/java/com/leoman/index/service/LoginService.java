@@ -1,6 +1,6 @@
 package com.leoman.index.service;
 
-import com.leoman.admin.entity.Admin;
+import com.leoman.permissions.admin.entity.Admin;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

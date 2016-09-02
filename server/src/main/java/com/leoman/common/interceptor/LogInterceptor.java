@@ -1,10 +1,9 @@
 package com.leoman.common.interceptor;
 
-import com.leoman.admin.entity.Admin;
+import com.leoman.permissions.admin.entity.Admin;
 import com.leoman.common.log.entity.Log;
 import com.leoman.common.log.entity.LogEntity;
 import com.leoman.common.log.service.impl.LogServiceImpl;
-import com.leoman.common.logger.Logger;
 import com.leoman.entity.Constant;
 import com.leoman.utils.BeanUtils;
 import org.springframework.web.method.HandlerMethod;

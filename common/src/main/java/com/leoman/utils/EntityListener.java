@@ -10,6 +10,7 @@ public class EntityListener {
 	@PrePersist
 	public void prePersist(BaseEntity entity) {
 		entity.setCreateDate(System.currentTimeMillis());
+		entity.setUpdateDate(System.currentTimeMillis());
 	}
 	
 	@PreUpdate

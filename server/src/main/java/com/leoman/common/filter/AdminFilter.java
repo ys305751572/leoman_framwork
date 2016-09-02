@@ -1,6 +1,6 @@
 package com.leoman.common.filter;
 
-import com.leoman.admin.entity.Admin;
+import com.leoman.permissions.admin.entity.Admin;
 import com.leoman.common.logger.Logger;
 import com.leoman.entity.Constant;
 import com.leoman.utils.WebUtil;
@@ -66,8 +66,8 @@ public class AdminFilter implements Filter {
             }
         }
 
-        Long adminId = (Long) httpRequest.getSession().getAttribute(Constant.CURRENT_USER_ID);
-        if (null != adminId && adminId != 0) {
+        Admin admin = (Admin) httpRequest.getSession().getAttribute(Constant.SESSION_MEMBER_GLOBLE);
+        if (null != admin) {
             chain.doFilter(request, response);
             return;
         }

@@ -1,6 +1,6 @@
 package com.leoman.exception;
 
-import com.leoman.admin.entity.Admin;
+import com.leoman.permissions.admin.entity.Admin;
 import com.leoman.common.log.entity.LogEntity;
 import com.leoman.common.log.service.impl.LogServiceImpl;
 import com.leoman.entity.Constant;

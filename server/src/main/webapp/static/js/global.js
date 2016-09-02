@@ -30,76 +30,8 @@ var $leoman = {
         ajaxOption: {method: 'POST', dataType: 'json', async: true},
         notifyMethod: null,
         dataTableL: {
-            "fnDrawCallback" : function() {
-                /* --------------------------------------------------------
-                 Checkbox + Radio
-                 -----------------------------------------------------------*/
-                if($('input:checkbox, input:radio')[0]) {
-                    //Checkbox + Radio skin
-                    $('input:checkbox:not([data-toggle="buttons"] input, .make-switch input), input:radio:not([data-toggle="buttons"] input)').iCheck({
-                        checkboxClass: 'icheckbox_minimal',
-                        radioClass: 'iradio_minimal',
-                        increaseArea: '20%' // optional
-                    });
+            "fnDrawCallback": function () {
 
-                    //Checkbox listing
-                    var parentCheck = $('.list-parent-check');
-                    var listCheck = $('.list-check');
-                    parentCheck.on('ifChecked', function(){
-                        $(this).closest('.block-area').find('.list-check').each(function() {
-                            $(this).prop("checked",true);
-                            $(this).closest('.icheckbox_minimal').addClass("checked");
-                            $(this).closest('tr').addClass("warning");
-                        });
-
-                        var checkIds = [];
-                        $(this).closest('.block-area').find('.list-check').each(function () {
-                            checkIds.push($(this).val())
-                        });
-                        var showon = $(this).closest('.container').find('.show-on');
-                        showon.show();
-                    });
-
-                    parentCheck.on('ifUnchecked', function(){
-                        $(this).closest('.block-area').find('.list-check').each(function() {
-                            $(this).prop("checked",false);
-                            $(this).closest('.icheckbox_minimal').removeClass("checked");
-                            $(this).closest('tr').removeClass("warning");
-                        });
-
-                        var showon = $(this).closest('.container').find('.show-on');
-                        showon.hide();
-                    });
-
-                    listCheck.on('ifChecked', function(){
-                        var parent = $(this).closest('.block-area').find('.list-parent-check');
-                        var thisCheck = $(this).closest('.block-area').find('.list-check');
-                        var thisChecked = $(this).closest('.block-area').find('.list-check:checked');
-
-                        thisChecked.closest('tr').addClass("warning");
-                        if(thisCheck.length == thisChecked.length) {
-                            parent.iCheck('check');
-                        }
-                    });
-
-                    listCheck.on('ifUnchecked', function(){
-                        var parent = $(this).closest('.block-area').find('.list-parent-check');
-                        parent.prop("checked",false);
-                        parent.closest('.icheckbox_minimal').removeClass("checked");
-                        $(this).closest('tr').removeClass("warning");
-                    });
-
-                    listCheck.on('ifChanged', function(){
-                        var thisChecked = $(this).closest('.block-area').find('.list-check:checked');
-                        var showon = $(this).closest('.container').find('.show-on');
-                        if(thisChecked.length > 0 ) {
-                            showon.show();
-                        }
-                        else {
-                            showon.hide();
-                        }
-                    });
-                }
             },
             "oLanguage": {
                 "sLengthMenu": "每页显示 _MENU_条",
@@ -195,6 +127,21 @@ var $leoman = {
             });
         }
     },
+
+    //子复选框的事件
+    subSelect: function (obj) {
+        var parentTable = jQuery(obj).parents('table');
+        //当没有选中某个子复选框时，SelectAll取消选中
+        if (!$(this).checked) {
+            $(".list-parent-check").attr("checked", false);
+        }
+        var chsub      =  parentTable.find('tbody input[type=checkbox]').length; //获取subcheck的个数
+        var checkedsub = parentTable.find('tbody input[type=checkbox]:checked').length; //获取选中的subcheck的个数
+        if (checkedsub == chsub) {
+            $(".list-parent-check").attr("checked", true);
+        }
+    },
+
     ajax: function (url, data, callbackFun, option) {
         if (option == null || option == undefined) {
             option = $leoman.v.ajaxOption;
@@ -310,11 +257,11 @@ $(document).on('click', '.notifyjs-foo-base .yes', function () {
         });
         if (sigle) {
             if (checkIds.length > 1) {
-                $leoman.notify('只能选择一条记录！', 'error');
+                alert("只能选择一条记录！");
                 return false;
             }
             else if (checkIds.length == 0) {
-                $leoman.notify('请选择一条记录操作！', 'error');
+                alert("请选择一条记录操作！");
                 return false;
             }
             else {
@@ -322,7 +269,7 @@ $(document).on('click', '.notifyjs-foo-base .yes', function () {
             }
         } else {
             if (checkIds.length == 0) {
-                $leoman.notify('请选择至少一条记录操作！', 'error');
+                alert("请选择至少一条记录操作！");
                 return false;
             } else {
                 return checkIds;
@@ -330,3 +277,22 @@ $(document).on('click', '.notifyjs-foo-base .yes', function () {
         }
     };
 })(jQuery);
+
+(function ($) {
+    $.fn.getInputId2 = function (sigle) {
+        var checkIds = [];
+        $(this).each(function () {
+            if($(this).is(":checked")) {
+                checkIds.push($(this).val())
+            }
+        });
+        if (checkIds.length > 1) {
+            alert("只能选择一条记录！");
+            return false;
+        }
+        else {
+            return checkIds[0];
+        }
+    };
+})(jQuery);
+
