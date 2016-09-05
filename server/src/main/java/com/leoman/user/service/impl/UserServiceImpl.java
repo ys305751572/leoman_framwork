@@ -73,10 +73,6 @@ public class UserServiceImpl extends GenericManagerImpl<UserInfo, UserInfoDao> i
         return page;
     }
 
-    @Override
-    public List<UserInfo> findByStatus(Integer status) {
-        return userInfoDao.findByStatus(status);
-    }
 
     @Override
     public UserInfo findOneByNickname(String nickname) {

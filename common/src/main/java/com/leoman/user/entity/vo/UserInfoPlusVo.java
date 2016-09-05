@@ -1,8 +1,5 @@
 package com.leoman.user.entity.vo;
 
-import com.leoman.post.entity.vo.PostImageVo;
-
-import java.util.List;
 
 /**
  * Created by Administrator on 2016/6/12.
@@ -30,10 +27,6 @@ public class UserInfoPlusVo {
     private Integer focus;
 
     private Integer isAttention;
-
-    private List<PostImageVo> stillList;
-
-    private List<PostImageVo> lifeList;
 
     private String weibo;
 
@@ -125,22 +118,6 @@ public class UserInfoPlusVo {
 
     public void setIsAttention(Integer isAttention) {
         this.isAttention = isAttention;
-    }
-
-    public List<PostImageVo> getStillList() {
-        return stillList;
-    }
-
-    public void setStillList(List<PostImageVo> stillList) {
-        this.stillList = stillList;
-    }
-
-    public List<PostImageVo> getLifeList() {
-        return lifeList;
-    }
-
-    public void setLifeList(List<PostImageVo> lifeList) {
-        this.lifeList = lifeList;
     }
 
     public String getWeibo() {

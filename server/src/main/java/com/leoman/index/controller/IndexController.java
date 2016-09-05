@@ -1,26 +1,15 @@
 package com.leoman.index.controller;
 
-import com.leoman.barrage.service.BarrageService;
-import com.leoman.comment.service.CommentService;
+
 import com.leoman.common.controller.common.CommonController;
 import com.leoman.common.log.entity.Log;
 import com.leoman.entity.Constant;
-import com.leoman.feedback.service.FeedBackService;
 import com.leoman.index.service.LoginService;
 import com.leoman.permissions.admin.entity.Admin;
 import com.leoman.permissions.module.entity.vo.ModuleVo;
 import com.leoman.permissions.module.service.ModuleService;
-import com.leoman.post.service.PostBaseService;
-import com.leoman.post.service.PostCommentService;
-import com.leoman.recordcount.service.RecordCountService;
-import com.leoman.report.service.ReportService;
-import com.leoman.user.service.UserService;
 import com.leoman.utils.CookiesUtils;
 import com.leoman.utils.Md5Util;
-import com.leoman.work.service.WorkComicService;
-import com.leoman.work.service.WorkNovelService;
-import com.leoman.work.service.WorkService;
-import com.leoman.work.service.WorkVideoService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,9 +30,6 @@ public class IndexController extends CommonController {
 
     @Autowired
     private LoginService loginService;
-
-    @Autowired
-    private RecordCountService recordCountService;
 
     @Autowired
     private ModuleService moduleService;

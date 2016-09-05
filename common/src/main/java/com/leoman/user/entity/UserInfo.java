@@ -1,6 +1,5 @@
 package com.leoman.user.entity;
 
-import com.leoman.creator.entity.Creator;
 import com.leoman.entity.BaseEntity;
 
 import javax.persistence.*;
@@ -61,9 +60,6 @@ public class UserInfo extends BaseEntity {
     @Column(name = "is_creator")
     private Integer isCreator = 0;
 
-    @OneToOne
-    @JoinColumn(name = "creator_id")
-    private Creator creator;
 
     @Column(name = "weixin")
     private String weixin;
@@ -203,14 +199,6 @@ public class UserInfo extends BaseEntity {
 
     public void setIsCreator(Integer isCreator) {
         this.isCreator = isCreator;
-    }
-
-    public Creator getCreator() {
-        return creator;
-    }
-
-    public void setCreator(Creator creator) {
-        this.creator = creator;
     }
 
     public String getWeixin() {

@@ -7,12 +7,12 @@ import java.util.TimerTask;
 /**
  * Created by Administrator on 2016/3/10.
  */
-public class MessageTimerWork {
+public class TimerWork {
 
     private Timer timer = null;
 
 
-    public MessageTimerWork(long time) {
+    public TimerWork(long time) {
         timer = new Timer();
         timer.schedule(new Mywork(), new Date(time));
     }

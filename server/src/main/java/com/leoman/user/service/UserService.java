@@ -13,8 +13,6 @@ public interface UserService extends GenericManager<UserInfo> {
 
     public Page<UserInfo> page(String mobile, String nickname, Integer gender, Integer status, Integer isCreator, Integer pageNum, Integer pageSize);
 
-    public List<UserInfo> findByStatus(Integer status);
-
     public UserInfo findOneByNickname(String nickname);
 
     // 查询新增会员列表

@@ -15,12 +15,6 @@ public interface UserInfoDao extends IBaseJpaRepository<UserInfo> {
     @Query("select a from UserInfo a where a.userLogin.id = ?1")
     public UserInfo findOneByUserId(Long userId);
 
-    @Query("select a from UserInfo a where a.isCreator = ?1")
-    public List<UserInfo> findByStatus(Integer status);
-
-    @Query("select a from UserInfo a where a.creator.id = ?1")
-    public UserInfo findOneByCreatorId(Long creatorId);
-
     @Query("select a from UserInfo a where a.weixin = ?1")
     public UserInfo findOneByWeixin(String weixin);
 
