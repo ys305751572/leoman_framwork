@@ -2,7 +2,8 @@
 SQLyog Ultimate v12.09 (64 bit)
 MySQL - 5.6.11 : Database - leoman_framework_demo
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -82,125 +83,6 @@ CREATE TABLE `t_log` (
   `modify_date` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=243 DEFAULT CHARSET=utf8 COMMENT='日志表';
-
-/*Data for the table `t_log` */
-
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (127,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031321258,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (128,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031392984,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (129,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031523976,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (130,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031552062,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (131,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031560064,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (132,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031572769,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (133,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031594936,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (134,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472031619793,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (135,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472032090737,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (136,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472032379905,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (137,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472032411766,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (138,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472032661512,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (139,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472032760327,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (140,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472032769897,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (141,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472032907836,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (142,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472033041187,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (143,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472091701435,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (144,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472092742327,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (145,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472103381554,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (146,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472104836150,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (147,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472105232902,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (148,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472105520028,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (149,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472112856810,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (150,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472113452073,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (151,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472119376019,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (152,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472176059239,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (153,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472177588436,NULL);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (154,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472181641561,1472181641561);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (155,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472181883241,1472181883241);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (156,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472182088072,1472182088072);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (157,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472182550744,1472182550744);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (158,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472182727295,1472182727295);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (159,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472189933400,1472189933400);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (160,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472190309311,1472190309311);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (161,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472195932971,1472195932971);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (162,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472197351618,1472197351618);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (163,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472198692779,1472198692779);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (164,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472198785654,1472198785654);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (165,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472199027461,1472199027461);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (166,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472199327808,1472199327808);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (167,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472200011908,1472200011908);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (168,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472200143043,1472200143043);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (169,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472200655617,1472200655617);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (170,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472201235900,1472201235900);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (171,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472201686693,1472201686693);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (172,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472440006013,1472440006013);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (173,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472454286483,1472454286483);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (174,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472454634674,1472454634675);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (175,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472455295814,1472455295814);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (176,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472457394826,1472457394826);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (177,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472458145647,1472458145647);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (178,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472460992294,1472460992294);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (179,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472461374747,1472461374747);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (180,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472461592911,1472461592911);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (181,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472462463410,1472462463410);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (182,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472462731807,1472462731807);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (183,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472462889141,1472462889141);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (184,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472463296978,1472463296978);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (185,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472463462468,1472463462468);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (186,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472463534175,1472463534175);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (187,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472463592968,1472463592968);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (188,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472463972830,1472463972830);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (189,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472465379299,1472465379299);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (190,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472465500130,1472465500130);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (191,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472465629874,1472465629874);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (192,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472520070894,1472520070894);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (193,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472520386889,1472520386889);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (194,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472520838710,1472520838710);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (195,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472521009559,1472521009559);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (196,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472521429980,1472521429980);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (197,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472523827413,1472523827413);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (198,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472524638919,1472524638919);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (199,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472524669374,1472524669374);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (200,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472524701752,1472524701752);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (201,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472525436270,1472525436270);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (202,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472525476427,1472525476427);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (203,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472525588138,1472525588138);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (204,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472525655570,1472525655570);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (205,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472525679960,1472525679960);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (206,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472525705018,1472525705018);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (207,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472527434616,1472527434616);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (208,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472527473389,1472527473389);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (209,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472528193860,1472528193860);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (210,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472528315076,1472528315076);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (211,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472528323177,1472528323177);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (212,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472528349588,1472528349588);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (213,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472528569473,1472528569473);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (214,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472529560410,1472529560410);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (215,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472529704083,1472529704083);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (216,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472529730636,1472529730636);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (217,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472534605050,1472534605050);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (218,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472537619861,1472537619861);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (219,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472540630164,1472540630164);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (220,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472540832450,1472540832450);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (221,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472540867296,1472540867296);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (222,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472540922047,1472540922047);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (223,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472542876112,1472542876112);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (224,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472544280503,1472544280503);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (225,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472545165773,1472545165773);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (226,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472545289856,1472545289856);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (227,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472547307277,1472547307277);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (228,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472547500163,1472547500164);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (229,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472548118356,1472548118356);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (230,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472548645891,1472548645891);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (231,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472549870806,1472549870806);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (232,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472550646770,1472550646770);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (233,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472551666593,1472551666593);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (234,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472552633198,1472552633198);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (235,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472609684642,1472609684642);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (236,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472618438247,1472618438247);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (237,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472622865884,1472622865884);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (238,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472626221551,1472626221551);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (239,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472630475971,1472630475971);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (240,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472630786115,1472630786115);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (241,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472633671293,1472633671293);
-insert  into `t_log`(`id`,`message`,`user_type`,`user_id`,`url`,`params`,`log_type`,`create_date`,`modify_date`) values (242,'admin登录了系统',NULL,1,NULL,NULL,NULL,1472634051040,1472634051040);
 
 /*Table structure for table `t_module` */
 
