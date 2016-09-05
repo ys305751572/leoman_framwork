@@ -110,6 +110,7 @@ public class IndexController extends CommonController {
         else {
             list = moduleService.findListModuleByUserId(admin.getId());
         }
+        request.getSession().setAttribute("loginAdmin", admin);
         request.getSession().setAttribute("moduleList", list);
 
 

@@ -150,16 +150,21 @@
                         },
                         {
                             "data": "id",
-                            "render": function (data) {
-                                var detail = "<button title='查看' class='btn btn-primary btn-circle add' onclick=\"$admin.fn.detail(\'" + data + "\')\">" +
-                                        "<i class='fa fa-eye'></i> 查看</button>";
+                            "render": function (data, type, row, meta) {
+                                if(row.username == "admin") {
+                                    return "";
+                                }
+                                else {
+                                    var detail = "<button title='查看' class='btn btn-primary btn-circle add' onclick=\"$admin.fn.detail(\'" + data + "\')\">" +
+                                            "<i class='fa fa-eye'></i> 查看</button>";
 
-                                var edit = "<button title='编辑' class='btn btn-primary btn-circle edit' onclick=\"$admin.fn.add(\'" + data + "\')\">" +
-                                        "<i class='fa fa-pencil-square-o'></i> 编辑</button>";
+                                    var edit = "<button title='编辑' class='btn btn-primary btn-circle edit' onclick=\"$admin.fn.add(\'" + data + "\')\">" +
+                                            "<i class='fa fa-pencil-square-o'></i> 编辑</button>";
 
-                                var selectRole = "<button title='赋予角色' class='btn btn-primary btn-circle edit' onclick=\"$admin.fn.openModal(\'" + data + "\')\">" +
-                                        "<i class='fa fa-exchange'></i> 赋予角色</button>";
-                                return edit + "&nbsp;" + selectRole;
+                                    var selectRole = "<button title='赋予角色' class='btn btn-primary btn-circle edit' onclick=\"$admin.fn.openModal(\'" + data + "\')\">" +
+                                            "<i class='fa fa-exchange'></i> 赋予角色</button>";
+                                    return edit + "&nbsp;" + selectRole;
+                                }
                             }
                         }
                     ],
