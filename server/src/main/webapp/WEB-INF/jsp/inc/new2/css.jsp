@@ -21,4 +21,5 @@
 <link rel="stylesheet" type="text/css" href="${contextPath}/static/html/js/jquery-multi-select/css/multi-select.css" />
 <!-- editor -->
 <link href="${contextPath}/static/umeditor/_css/umeditor.css" type="text/css" rel="stylesheet">
-
+<!-- datetimepicker -->
+<link href="${contextPath}/static/datepicker/css/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet">

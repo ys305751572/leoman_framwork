@@ -126,7 +126,7 @@
 			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>
 	
-	<bean id="beanUtil" class="com.leoman.utils.BeanUtils"></bean>
+	<bean id="beanUtil" class="com.leoman.utils.BeanUtils" />
 	<!--<bean id="cacheTempCodeServiceImpl" class="com.leoman.cache.CacheTempCodeServiceImpl" />-->
 	<bean id="logService" class="com.leoman.common.log.service.impl.LogServiceImpl" />
 </beans>

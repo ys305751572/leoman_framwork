@@ -23,30 +23,79 @@ public class DateUtils {
 	}
 
 	public static void main(String[] args) throws ParseException {
-		// System.out.println(DateTools.dateToDateWithFormat(new Date(),
-		// "yyyy-MM-01"));
-		//		
-		// System.out.println(DateTools.dateWithFormat(new Date(),
-		// "yyyy-MM-1"));
+		System.out.println(getTimesmorning());
+	}
 
-		// System.out.println(DateTools.dateCompare(DateTools.stringToDateWithFormat("2008-09-12",
-		// "yyyy-MM-dd")));
+	/**
+	 * 获得当天0点时间
+	 * @return
+     */
+	public static long getTimesmorning(){
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 0);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return (cal.getTimeInMillis());
+	}
 
-		// System.out.println(DateTools.getDays(new Date()));
-		// System.out.println(DateTools.getRemainDays(new Date()));
-//		System.out.println(new Date());
-//        int year =  getYear(new Date());
-//        int month = getMonth(new Date());
-//        System.out.println("year:"+year+",month:"+month+1);
+	/**
+	 * 获得当天24点时间
+	 * @return
+     */
+	public static long getTimesnight(){
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 24);
+		cal.set(Calendar.SECOND, 0);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.MILLISECOND, 0);
+		return (cal.getTimeInMillis());
+	}
 
-//        DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        Date date = format.parse("2015-06-15 22:30:00");
-//
-//        System.out.println(minuteCompare(date,15));
+	/**
+	 * 获得本周一0点时间
+	 * @return
+     */
+	public static long getTimesWeekmorning(){
+		Calendar cal = Calendar.getInstance();
+		cal.set(cal.get(Calendar.YEAR),cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0,0);
+		cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+		return (cal.getTimeInMillis());
+	}
 
-		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm").format(dateAddDay(new Date(),3)));
+	/**
+	 * 获得本周日24点时间
+	 * @return
+     */
+	public static long getTimesWeeknight(){
+		Calendar cal = Calendar.getInstance();
+		cal.set(cal.get(Calendar.YEAR),cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0,0);
+		cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
+		return ((cal.getTime().getTime()+ (7 * 24 * 60 * 60 * 1000)));
+	}
 
-    }
+	/**
+	 * 获得本月第一天0点时间
+	 * @return
+     */
+	public static long getTimesMonthmorning(){
+		Calendar cal = Calendar.getInstance();
+		cal.set(cal.get(Calendar.YEAR),cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0,0);
+		cal.set(Calendar.DAY_OF_MONTH,cal.getActualMinimum(Calendar.DAY_OF_MONTH));
+		return (cal.getTimeInMillis());
+	}
+
+	/**
+	 * 获得本月最后一天24点时间
+	 * @return
+     */
+	public static long getTimesMonthnight(){
+		Calendar cal = Calendar.getInstance();
+		cal.set(cal.get(Calendar.YEAR),cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0,0);
+		cal.set(Calendar.DAY_OF_MONTH,cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+		cal.set(Calendar.HOUR_OF_DAY, 24);
+		return (cal.getTimeInMillis());
+	}
 
 	/**
 	 *  获得上m月的第一天
@@ -475,12 +524,12 @@ public class DateUtils {
 		return sdf.format(time);
 	}
 
-	public static String DeleteYear(String date){
+	public static String deleteYear(String date){
 		return date.substring(5).substring(0, date.substring(5).length()-3);
 	}
 
 	// 获取当前系统时间
-	public static String GetCurrentTime() {
+	public static String getCurrentTime() {
 		Date now = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String currenttime = dateFormat.format(now);
@@ -488,7 +537,7 @@ public class DateUtils {
 	}
 
 	// 获取只有年月日的时间戳
-	public static long GetDiffTime(String day) throws ParseException {
+	public static long getDiffTime(String day) throws ParseException {
 		Date now = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String currenttime = dateFormat.format(now);

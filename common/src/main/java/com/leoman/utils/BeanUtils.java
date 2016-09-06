@@ -51,7 +51,6 @@ public class BeanUtils implements ApplicationContextAware {
 		Map<String,Object> map = new HashMap<String,Object>();
 		Field[] fields = data.getClass().getDeclaredFields();
 		try {
-			
 			PropertyDescriptor pd = null;
 			for (Field field : fields) {
 				String k = field.getName();

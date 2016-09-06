@@ -1,8 +1,8 @@
 package com.leoman.exception;
 
+import com.leoman.common.log.service.LogService;
 import com.leoman.permissions.admin.entity.Admin;
 import com.leoman.common.log.entity.LogEntity;
-import com.leoman.common.log.service.impl.LogServiceImpl;
 import com.leoman.entity.Constant;
 import com.leoman.utils.BeanUtils;
 import com.leoman.utils.WebUtil;
@@ -43,13 +43,13 @@ public class CustomSimpleMappingExceptionResolver extends SimpleMappingException
         }
         System.out.println("异常信息" + buffer.toString());
 
-        LogServiceImpl logService = (LogServiceImpl) BeanUtils.getBean("logService");
+        LogService logService = (LogService) BeanUtils.getBean("logService");
         LogEntity logEntity = new LogEntity();
         logEntity.setMessage(buffer.toString());
-        logEntity.setLogType(LogEntity.LOG_TYPE_ERROR);
+        logEntity.setLogType(Constant.LOG_TYPE_ERROR);
         logEntity.setUrl(request.getRequestURI().toLowerCase());
         logEntity.setParams(request.getQueryString());
-        logEntity.setUserType(LogEntity.USER_TYPE_USER);
+        logEntity.setUserType(Constant.USER_TYPE_USER);
         logService.save(logEntity);
 
         LOGGER.info("============================================");

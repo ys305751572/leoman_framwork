@@ -88,4 +88,10 @@ public interface Constant {
 
     // 当前登录人姓名
     String CURRENT_USER_NAME = "session_member_name";
+
+    public static final int USER_TYPE_ADMIN = 0;
+    public static final int USER_TYPE_USER = 1;
+
+    public static final int LOG_TYPE_INFO = 0;
+    public static final int LOG_TYPE_ERROR = 1;
 }

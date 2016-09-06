@@ -61,6 +61,9 @@
 <%--<script type="text/javascript" charset="utf-8" src="${contextPath}/static/umeditor/js/editor_api.js"></script>--%>
 <script type="text/javascript" src="${contextPath}/static/umeditor/js/zh-cn.js"></script>
 
+<!-- timepicker  -->
+<script type="text/javascript" src="${contextPath}/static/datepicker/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="${contextPath}/static/datepicker/js/bootstrap-datetimepicker.zh-CN.js"></script>
 <!--common scripts for all pages-->
 <script src="${contextPath}/static/html/js/scripts.js"></script>
 <script src="${contextPath}/static/html/js/jquery.validate.extend.js"></script>

@@ -14,13 +14,6 @@ import javax.persistence.Table;
 @Table(name = "t_log")
 public class LogEntity extends BaseEntity {
 
-
-    public static final int USER_TYPE_ADMIN = 0;
-    public static final int USER_TYPE_USER = 1;
-
-    public static final int LOG_TYPE_INFO = 0;
-    public static final int LOG_TYPE_ERROR = 1;
-
     @Column(name = "message")
     private String message;
 

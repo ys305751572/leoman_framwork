@@ -17,7 +17,6 @@
 
     <form class="form-signin" action="${contextPath}/admin/login/check">
         <div class="form-signin-heading text-center">
-            <h1 class="sign-title">Sign In</h1>
             <img src="${contextPath}/static/html/images/login-logo.png" alt=""/>
         </div>
         <div class="login-wrap">
@@ -27,17 +26,16 @@
             <button class="btn btn-lg btn-login btn-block" type="submit">
                 登录
             </button>
-            <div class="registration">
-                Not a member yet?
-                <a class="" href="registration.html">
-                    Signup
-                </a>
-            </div>
+            <%--<div class="registration">--%>
+                <%--Not a member yet?--%>
+                <%--<a class="" href="registration.html">--%>
+                    <%--Signup--%>
+                <%--</a>--%>
+            <%--</div>--%>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
                 <span class="pull-right">
-                    <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
-
+                    <%--<a data-toggle="modal" href="#myModal"> Forgot Password?</a>--%>
                 </span>
             </label>
         </div>
