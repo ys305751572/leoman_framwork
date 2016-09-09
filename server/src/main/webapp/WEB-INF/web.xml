@@ -53,6 +53,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- 后台访问过滤器 -->
     <filter>
         <filter-name>AdminFilter</filter-name>
         <filter-class>com.leoman.common.filter.AdminFilter</filter-class>
@@ -64,6 +65,16 @@
     <filter-mapping>
         <filter-name>AdminFilter</filter-name>
         <url-pattern>/admin/*</url-pattern>
+    </filter-mapping>
+
+    <!-- app访问请求过滤器 -->
+    <filter>
+        <filter-name>ApiRequestFilter</filter-name>
+        <filter-class>com.leoman.common.filter.ApiRequestFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ApiRequestFilter</filter-name>
+        <url-pattern>/api/*</url-pattern>
     </filter-mapping>
 
     <servlet>

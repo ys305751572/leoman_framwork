@@ -9,7 +9,6 @@ import com.leoman.permissions.module.service.ModuleService;
 import com.leoman.permissions.role.entity.Role;
 import com.leoman.permissions.role.service.RoleService;
 import com.leoman.permissions.role.service.impl.RoleServiceImpl;
-import com.leoman.utils.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
@@ -18,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 /**
+ * 角色controller
  * Created by yesong on 2016/8/26.
  */
 @Controller
@@ -71,8 +70,8 @@ public class RoleController extends GenericEntityController<Role, Role, RoleServ
 
     /**
      * 保存
-     * @param role
-     * @return
+     * @param role 角色
+     * @return 操作结果
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
@@ -90,9 +89,9 @@ public class RoleController extends GenericEntityController<Role, Role, RoleServ
 
     /**
      * 角色详情
-     * @param id
-     * @param model
-     * @return
+     * @param id 角色ID
+     * @param model model
+     * @return 页面路径
      */
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
     public String detail(Long id, Model model) {
@@ -102,8 +101,8 @@ public class RoleController extends GenericEntityController<Role, Role, RoleServ
 
     /**
      * 删除角色
-     * @param id
-     * @return
+     * @param id 角色ID
+     * @return 操作结果
      */
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public Result detele(Long id) {

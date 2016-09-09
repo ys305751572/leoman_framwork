@@ -28,7 +28,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2016/7/5 0005.
+ * 管理员controller
+ * Created by 叶松 on 2016/7/5 0005.
  */
 @Controller
 @RequestMapping(value = "/admin/admin")
@@ -63,12 +64,6 @@ public class AdminController extends GenericEntityController<Admin, Admin, Admin
         query.setPagesize(length);
         query.like("username", username);
         Page<Admin> page = adminService.queryPage(query);
-//        try {
-//            page =
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        Page<Admin> page = adminService.page(pagenum,length);
         return DataTableFactory.fitting(draw, page);
     }
 
@@ -83,8 +78,8 @@ public class AdminController extends GenericEntityController<Admin, Admin, Admin
     /**
      * 保存
      *
-     * @param admin
-     * @return
+     * @param admin 管理员
+     * @return 操作结果
      */
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     @ResponseBody
@@ -103,8 +98,8 @@ public class AdminController extends GenericEntityController<Admin, Admin, Admin
     /**
      * 验证用户名是否存在
      *
-     * @param username
-     * @return
+     * @param username 用户名
+     * @return 用户名是否存在
      */
     @RequestMapping(value = "/check/username", method = RequestMethod.POST)
     @ResponseBody

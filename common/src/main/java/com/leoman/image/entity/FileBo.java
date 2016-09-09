@@ -3,6 +3,7 @@ package com.leoman.image.entity;
 import java.io.File;
 
 /**
+ *
  * Created by wangbin on 2014/12/30.
  */
 public class FileBo {

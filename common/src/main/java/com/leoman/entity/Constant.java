@@ -15,6 +15,9 @@ public interface Constant {
 
     String MEMBER_TYPE_GLOBLE = "GLOBLE";
 
+    // APP请求KEY
+    public final static String ACCESS_KEY = "gNG6A6WSrom-vGQtQQiCZQ1uDhQyt9Ode7Z9ewn_";
+
     // 用户积分/馒头变动类型
     Integer USER_INTEGRAL_CHANGE_TYPE_001 = 1;  // 积分
     Integer USER_INTEGRAL_CHANGE_TYPE_002 = 2;  // 馒头

@@ -6,7 +6,6 @@
 	   xmlns:aop="http://www.springframework.org/schema/aop"
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
-
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 	http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
@@ -22,11 +21,13 @@
 		</property>
 	</bean>
 
+
+
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init"
 		destroy-method="close">
-		<property name="url" value="${jdbc.url}"></property>
-		<property name="username" value="${jdbc.username}"></property>
-		<property name="password" value="${jdbc.password}"></property>
+		<property name="url" value="${jdbc.url}"/>
+		<property name="username" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
 
 		<!-- 配置初始化大小、最小、最大 -->
 		<property name="initialSize" value="1" />
@@ -94,6 +95,8 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 
+
+
 	<!-- 启用 annotation事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	<!-- 配置Spring Data JPA扫描目录 -->
@@ -118,14 +121,15 @@
 		<!--<constructor-arg name="wxMpService" ref="wxMpService" />-->
 	<!--</bean>-->
 
-
 	<context:component-scan base-package="com.leoman">
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.web.bind.annotation.ControllerAdvice" />
 	</context:component-scan>
-	
+
+
+
 	<bean id="beanUtil" class="com.leoman.utils.BeanUtils" />
 	<!--<bean id="cacheTempCodeServiceImpl" class="com.leoman.cache.CacheTempCodeServiceImpl" />-->
 	<bean id="logService" class="com.leoman.common.log.service.impl.LogServiceImpl" />

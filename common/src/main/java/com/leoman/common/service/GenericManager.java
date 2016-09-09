@@ -12,22 +12,24 @@ import java.util.List;
 
 public interface GenericManager<T> {
 
-    public EntityManager getEntityManager();
+    EntityManager getEntityManager();
 
     /****
      * 查询分页实现
      *
      * @param entity 实体类
-     * @return
+     * @return 实体Page
      */
-    public Page<T> query(T entity, int start, int length);
-
+    Page<T> query(T entity, int start, int length);
 
     /**
      * 按照指定字段查询指定条数的记录
+     * @param sort 排序字段
+     * @param isAsc 是否升序
+     * @param count 查询数量
+     * @return list
      */
-
-    public List<T> queryTop(String sort, boolean isAsc, int count);
+    List<T> queryTop(String sort, boolean isAsc, int count);
 
     /****
      * 分页规则构建
@@ -38,14 +40,13 @@ public interface GenericManager<T> {
      * filters.put("telephone",new SearchFilter("telephone",Operator.LIKE, czexpert.getTelephone()) );
      * }
      *
-     * @return
+     * @return Specification
      */
-    public Specification<T> buildSpecification(T t);
+    Specification<T> buildSpecification(T t);
 
     /**
      * 查询所有的对象
-     *
-     * @return
+     * @return list
      */
     List<T> queryAll();
 
@@ -54,7 +55,7 @@ public interface GenericManager<T> {
      *
      * @param orderBy 排序属性
      * @param isAsc   是否asc
-     * @return
+     * @return list
      */
     List<T> queryAll(String orderBy, boolean isAsc);
 
@@ -63,7 +64,7 @@ public interface GenericManager<T> {
      *
      * @param hql    查询语句
      * @param values 语句对应的值
-     * @return
+     * @return list
      */
     List<T> query(String hql, Object... values);
 
@@ -72,7 +73,7 @@ public interface GenericManager<T> {
      *
      * @param propertyName 属性名
      * @param value        属性对应的值
-     * @return
+     * @return list
      */
     List<T> queryByProperty(String propertyName, Object value);
 
@@ -83,7 +84,7 @@ public interface GenericManager<T> {
      * @param value        属性对应的值
      * @param orderBy      排序字段
      * @param isAsc        是否增序
-     * @return
+     * @return list
      */
     List<T> queryByProperty(String propertyName, Object value, String orderBy,
                             boolean isAsc);
@@ -93,7 +94,7 @@ public interface GenericManager<T> {
      *
      * @param propertyName 属性名
      * @param value        属性对应的值
-     * @return
+     * @return entity
      */
     T queryUniqueBy(String propertyName, Object value);
 
@@ -101,86 +102,90 @@ public interface GenericManager<T> {
      * 根据条件查询
      *
      * @param criterions
-     * @return
+     * @return list
      */
     List<T> query(Criterion... criterions);
 
     /**
      * 根据条件查询
-     *
-     * @return
+     * @param predicate
+     * @return list
      */
     List<T> query(Predicate... predicate);
 
+    /**
+     *
+     * @param entity
+     * @param uniquePropertyName
+     * @return list
+     */
     boolean isUnique(Object entity, String... uniquePropertyName);
 
     /**
      * 根据主键查询
      *
-     * @param id
-     * @return
+     * @param id 主键
+     * @return entity
      */
     T queryByPK(Serializable id);
 
     /**
      * 对象是否存在
      *
-     * @param id
-     * @return
+     * @param id 主键
+     * @return boolean
      */
     boolean exists(Serializable id);
 
     /**
      * 新增对象保存
      *
-     * @param object
-     * @return
+     * @param object entity
+     * @return entity
      */
     T insert(T object);
 
     /**
      * 保存
      *
-     * @param object
-     * @return
+     * @param object entity
+     * @return entity
      */
     T save(T object);
 
     /**
      * 批量保存
      *
-     * @param list
-     * @return
+     * @param list list entity
+     * @return null
      */
     T saveList(List<T> list);
 
 
     /**
      * 批量更新
-     *
-     * @param list
+     * @param list list entity
      */
-    public void updateList(List<T> list);
+    void updateList(List<T> list);
 
     /**
      * 更新对象保存
      *
-     * @param object
-     * @return
+     * @param object entity
+     * @return entity
      */
     T update(T object);
 
     /**
      * 根据主键删除对象
-     *
-     * @param id
+     * @param id 主键
      */
     void deleteByPK(Serializable id);
 
     /**
      * 根据主键删除对象
      *
-     * @param ids
+     * @param ids 主键集合
      */
     void deleteByPKs(Serializable[] ids);
 
@@ -191,13 +196,13 @@ public interface GenericManager<T> {
      */
     void delete(T object);
 
-    public void deletes(Collection<T> objects);
+    void deletes(Collection<T> objects);
 
-    public String getIdName();
+    String getIdName();
 
-    public Class getIdClass();
+    Class getIdClass();
 
-    public Class getEntityClass();
+    Class getEntityClass();
 
     /**
      * 根据条件查询前N条记录
@@ -209,7 +214,7 @@ public interface GenericManager<T> {
      * @param count
      * @return
      */
-    public List<T> queryTop(String sort, final String propertyName, final Object value, boolean isAsc, int count);
+    List<T> queryTop(String sort, final String propertyName, final Object value, boolean isAsc, int count);
 
     /**
      * 根据条件查询某个实体的列表
@@ -220,7 +225,7 @@ public interface GenericManager<T> {
      * @return
      * @author zb
      */
-    public Page<T> scroll(final int firstindex, final int maxresult, final String sql);
+    Page<T> scroll(final int firstindex, final int maxresult, final String sql);
 
     /**
      * 根据条件查询数量
@@ -228,9 +233,9 @@ public interface GenericManager<T> {
      * @param query
      * @return
      */
-    public Long getCount(Query query);
+    Long getCount(Query query);
 
-    public Integer getCountSql(String sql);
+    Integer getCountSql(String sql);
 
     /**
      * 根据条件查询数据集合（带分页）
@@ -238,37 +243,37 @@ public interface GenericManager<T> {
      * @param query
      * @return
      */
-    public Page<T> queryPage(Query query);
+    Page<T> queryPage(Query query);
 
-    public List<T> queryAll(Query query);
-
-    /**
-     * 根据jpql语句查询
-     * @param jpql
-     * @return
-     */
-	public List<T> queryByJpql(String jpql,Class<T> clazz);
+    List<T> queryAll(Query query);
 
     /**
      * 根据jpql语句查询
      * @param jpql
      * @return
      */
-    public Integer updateByJpql(String jpql);
+    List<T> queryByJpql(String jpql,Class<T> clazz);
+
+    /**
+     * 根据jpql语句查询
+     * @param jpql
+     * @return
+     */
+    Integer updateByJpql(String jpql);
 
     /**
      * 根据原生态sql查询
      * @param sql
      * @return
      */
-    public List<T> queryBySql(String sql,Class<T> clazz);
+    List<T> queryBySql(String sql,Class<T> clazz);
 
     /**
      * 根据原生态sql更新
      * @param sql
      * @return
      */
-    public Integer updateBySql(String sql);
+    Integer updateBySql(String sql);
 
-    public Page queryPageByJpql(String jpql, int pageNo, int rowsPerPage);
+    Page queryPageByJpql(String jpql, int pageNo, int rowsPerPage);
 }

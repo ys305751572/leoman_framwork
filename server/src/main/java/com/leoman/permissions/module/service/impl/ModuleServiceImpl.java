@@ -1,6 +1,5 @@
 package com.leoman.permissions.module.service.impl;
 
-import com.leoman.common.core.bean.Role;
 import com.leoman.common.service.impl.GenericManagerImpl;
 import com.leoman.permissions.module.dao.ModuleDao;
 import com.leoman.permissions.module.entity.Module;

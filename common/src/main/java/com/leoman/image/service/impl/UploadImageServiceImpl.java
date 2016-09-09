@@ -48,47 +48,7 @@ public class UploadImageServiceImpl extends AbstractUploadService implements Upl
 
     @Override
     public Image uploadImage(MultipartFile file, String... thumbSizes) {
-        try {
-            FileBo fileBo = saveImage(file);
-            Image image = new Image();
-            image.setPath(fileBo.getPath());
 
-            //处理大于500k的jpg图片
-            Map<String,Long> imgInfo = FileUtil.getImgInfo(fileBo.getFile());
-            Long imgSize = imgInfo.get("size");
-            if(imgSize>512000&&fileBo.getExt().equals(".jpg")){
-                String destImage = fileBo.getForeName() + "_" + "compact" + fileBo.getExt();
-                FileUtil.compactImage(fileBo.getFile(), Configue.getUploadPath(), destImage);
-                image.setPath(destImage);
-                imgInfo = FileUtil.getImgInfo(Configue.getUploadPath()+destImage);
-            }
-
-            //存储宽和高
-            Map<String,Long> attrMap = new HashMap<String, Long>();
-            attrMap.put("width",imgInfo.get("width"));
-            attrMap.put("height",imgInfo.get("height"));
-            image.setAttribute(JsonUtil.obj2Json(attrMap));
-
-            if (thumbSizes != null && thumbSizes.length > 0) {
-                Map<String, String> thumb = new HashMap<String, String>();
-                for (String size : thumbSizes) {
-                    String regex = "(\\d+)x(\\d+)";
-                    Pattern p = Pattern.compile(regex, Pattern.DOTALL);
-                    Matcher m = p.matcher(size);
-                    String destImage = fileBo.getForeName() + "_" + size + fileBo.getExt();
-                    if (m.find()) {
-                        int width = Integer.parseInt(m.group(1));// 宽
-                        int height = Integer.parseInt(m.group(2));// 高
-                        FileUtil.thumbImage(fileBo.getFile(),Configue.getUploadPath(), destImage, width, height);
-                    }
-                    thumb.put(size, destImage);
-                }
-                image.setThumbs(JsonUtil.obj2Json(thumb));
-            }
-            return image;
-        } catch (Exception e) {
-            GeneralExceptionHandler.log(e);
-        }
         return null;
     }
 
@@ -96,7 +56,7 @@ public class UploadImageServiceImpl extends AbstractUploadService implements Upl
     public String uploadFile(MultipartFile file) {
         try {
             FileBo fileBo = super.save(file);
-            if(fileBo != null){
+            if (fileBo != null) {
                 return fileBo.getPath();
             }
             return null;
@@ -110,7 +70,7 @@ public class UploadImageServiceImpl extends AbstractUploadService implements Upl
     @Transactional
     public List<Image> uploadImages(MultipartFile[] files) {
         List<Image> images = new ArrayList<Image>();
-        for(MultipartFile file : files){
+        for (MultipartFile file : files) {
             Image image = uploadImage(file);
             imageService.create(image);
             images.add(image);

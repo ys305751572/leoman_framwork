@@ -13,7 +13,7 @@ import javax.persistence.Table;
  */
 @Table(name = "t_admin")
 @Entity
-@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Admin extends BaseEntity {
 
     @Column(name = "username")

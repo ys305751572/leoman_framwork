@@ -4,6 +4,7 @@ import com.leoman.common.dao.IBaseJpaRepository;
 import com.leoman.common.service.GenericManager;
 import org.hibernate.criterion.Criterion;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -95,7 +96,6 @@ public class GenericManagerImpl<E, D extends IBaseJpaRepository<E>> implements G
     /**
      * 按照指定字段查询指定条数的记录
      */
-
     public List<E> queryTop(String sort, final String propertyName, final Object value, boolean isAsc, int count) {
         Order o = new Order(Direction.DESC, sort);
         if (isAsc) {
@@ -228,11 +228,10 @@ public class GenericManagerImpl<E, D extends IBaseJpaRepository<E>> implements G
         return this.getEntityDAO().findAll(s);
     }
 
-
+    @Cacheable(value = "serviceCache")
     public E queryByPK(Serializable id) {
         return getEntityDAO().findOne(id);
     }
-
 
     public List<E> queryByProperty(final String propertyName, final Object value) {
         return getEntityDAO().findAll(new Specification<E>() {

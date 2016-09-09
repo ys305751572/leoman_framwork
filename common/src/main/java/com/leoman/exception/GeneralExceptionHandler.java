@@ -1,6 +1,6 @@
 package com.leoman.exception;
 
-import com.leoman.logger.Logger;
+import com.leoman.common.logger.Logger;
 import org.apache.commons.lang.exception.ExceptionUtils;
 
 public final class GeneralExceptionHandler {

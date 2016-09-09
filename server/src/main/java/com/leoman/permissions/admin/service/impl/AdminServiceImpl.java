@@ -5,6 +5,7 @@ import com.leoman.permissions.admin.entity.Admin;
 import com.leoman.permissions.admin.service.AdminService;
 import com.leoman.common.service.impl.GenericManagerImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -19,7 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/3/8.
+ * 管理员controller
+ * Created by yesong on 2016/3/8.
  */
 @Service
 public class AdminServiceImpl extends GenericManagerImpl<Admin, AdminDao> implements AdminService {
@@ -28,6 +30,7 @@ public class AdminServiceImpl extends GenericManagerImpl<Admin, AdminDao> implem
     private AdminDao adminDao;
 
     @Override
+    @Cacheable(value = "serviceCache")
     public Admin findByUsername(String username) {
         return adminDao.findByUsername(username);
     }
@@ -40,7 +43,6 @@ public class AdminServiceImpl extends GenericManagerImpl<Admin, AdminDao> implem
             public Predicate toPredicate(Root<Admin> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
                 Predicate result = null;
                 List<Predicate> predicateList = new ArrayList<Predicate>();
-
                 if (predicateList.size() > 0) {
                     result = cb.and(predicateList.toArray(new Predicate[]{}));
                 }
@@ -52,7 +54,6 @@ public class AdminServiceImpl extends GenericManagerImpl<Admin, AdminDao> implem
             }
 
         }, pageRequest);
-
         return page;
     }
 }

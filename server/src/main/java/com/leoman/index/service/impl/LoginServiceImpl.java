@@ -1,6 +1,5 @@
 package com.leoman.index.service.impl;
 
-import com.leoman.pay.util.MD5Util;
 import com.leoman.permissions.admin.entity.Admin;
 import com.leoman.permissions.admin.service.AdminService;
 import com.leoman.entity.Constant;
@@ -8,13 +7,13 @@ import com.leoman.index.service.LoginService;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- * Created by wangbin on 2015/3/3.
+ * 登录service
+ * Created by yesong on 2015/3/3.
  */
 @Service
 public class LoginServiceImpl implements LoginService {

@@ -22,10 +22,11 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by wangbin on 2015/7/29.
+ * 登录，登出
+ * Created by yesong on 2015/7/29.
  */
 @Controller
-@RequestMapping(value = "admin")
+@RequestMapping(value = "/admin")
 public class IndexController extends CommonController {
 
     @Autowired
@@ -35,10 +36,7 @@ public class IndexController extends CommonController {
     private ModuleService moduleService;
 
     @RequestMapping(value = "/login")
-    public String login(HttpServletRequest request,
-                        HttpServletResponse response,
-                        String error,
-                        ModelMap model) {
+    public String login(HttpServletRequest request, String error, ModelMap model) {
         try {
             if (StringUtils.isNotBlank(error)) {
                 model.addAttribute("error", error);
@@ -65,16 +63,14 @@ public class IndexController extends CommonController {
                              ModelMap model) {
         response.setCharacterEncoding("UTF-8");
         // 管理员
-//        AdminRole adminRole = adminRoleService.sysUserLogin(request, username, Md5Util.md5(password));
+        // AdminRole adminRole = adminRoleService.sysUserLogin(request, username, Md5Util.md5(password));
         Boolean success = loginService.login(request, username, Md5Util.md5(password), Constant.MEMBER_TYPE_GLOBLE,remark);
         if (success) {
             // 登录成功后，将用户名放入cookies
             int loginMaxAge = 30 * 24 * 60 * 60; // 定义cookies的生命周期，这里是一个月。单位为秒
             CookiesUtils.addCookie(response, "username", username, loginMaxAge);
-
             // 增加今日访问人数和在线人数
-//            recordCountService.addCount(1, 1);
-
+            // recordCountService.addCount(1, 1);
             return "redirect:/admin/dashboard";
         }
         model.addAttribute("error", "用户名或密码错误!");
@@ -82,9 +78,7 @@ public class IndexController extends CommonController {
     }
 
     @RequestMapping(value = "/logout")
-    public String logout(HttpServletRequest request,
-                         HttpServletResponse response,
-                         ModelMap model) {
+    public String logout(HttpServletRequest request) {
         loginService.logOut(request, Constant.MEMBER_TYPE_GLOBLE);
         // 减少今日在线人数
 //        recordCountService.addCount(0, -1);
@@ -98,12 +92,10 @@ public class IndexController extends CommonController {
 
 
     @RequestMapping(value = "/dashboard")
-    public String dashboard(HttpServletRequest request,
-                            HttpServletResponse response,
-                            ModelMap model) {
+    public String dashboard(HttpServletRequest request) {
 
         Admin admin = (Admin) request.getSession().getAttribute(Constant.SESSION_MEMBER_GLOBLE);
-        List<ModuleVo> list = null;
+        List<ModuleVo> list;
         if(admin.getUsername().equals("admin")) {
             list = moduleService.findInModuelIds(null);
         }
@@ -112,8 +104,6 @@ public class IndexController extends CommonController {
         }
         request.getSession().setAttribute("loginAdmin", admin);
         request.getSession().setAttribute("moduleList", list);
-
-
         // 获取当前登录人信息
 //        Admin admin = (Admin) request.getSession().getAttribute(Constant.MEMBER_TYPE_GLOBLE);
 //        AdminRole adminRole = adminRoleService.queryByPK(admin.getId());
@@ -129,7 +119,6 @@ public class IndexController extends CommonController {
 //                }
 //            }
 //        }
-//
 //        // 将该用户信息和权限列表放入界面中
 //        request.getSession().setAttribute("menu_moduleList", modulesList);
 //        request.getSession().setAttribute("menu_adminRole", adminRole);
